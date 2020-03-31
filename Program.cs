@@ -6,6 +6,7 @@ namespace empWageComputation
     {
         private static int WAGE_PER_HOUR = 20;
         private static int FULL_DAY_HOUR = 8;
+        private static int PART_TIME_HOUR = 4;
         private static int NO_WAGE = 0;
 
         private static bool isEmployeePresent;
@@ -19,7 +20,7 @@ namespace empWageComputation
             isEmployeePresent = emp.employeeAttendance();
 
             if (isEmployeePresent == true)
-            {
+            {   
                 wageForADay = emp.dailyEmployeeWage(WAGE_PER_HOUR, FULL_DAY_HOUR);
             }
             else
