@@ -11,6 +11,8 @@ namespace empWageComputation
 
         private static bool isEmployeePresent;
         private static int wageForADay;
+        private static int workHours;
+        private static int empType;
 
         static void Main(string[] args)
         {
@@ -20,8 +22,22 @@ namespace empWageComputation
             isEmployeePresent = emp.employeeAttendance();
 
             if (isEmployeePresent == true)
-            {   
-                wageForADay = emp.dailyEmployeeWage(WAGE_PER_HOUR, FULL_DAY_HOUR);
+            {
+                Random randomNum = new Random();
+                empType = randomNum.Next(0, 2);
+                switch (empType)
+                {
+                    case 0:
+                        workHours = FULL_DAY_HOUR;
+                        break;
+                    case 1:
+                        workHours = PART_TIME_HOUR;
+                        break;
+                    default:
+                        break;
+                }
+
+                wageForADay = emp.dailyEmployeeWage(WAGE_PER_HOUR, workHours);
             }
             else
             {
