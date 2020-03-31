@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace empWageComputation
 {
@@ -23,6 +22,8 @@ namespace empWageComputation
         private bool isEmployeePresent;
         private int workingHoursForMonth = 0;
         private int days = 0;
+
+        
 
         // constructor
         public Employee(int fullTime, int partTime, int wagePerHour)
@@ -71,7 +72,7 @@ namespace empWageComputation
         }
 
         // Method to calculate monthly wage for a employee
-        public int monthlyWage()
+        public int monthlyWage(Dictionary<string, int> dictionary)
         {
 
             int employeeMonthlyWage = 0;
