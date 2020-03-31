@@ -15,7 +15,7 @@ namespace empWageComputation
         {
 
             Console.WriteLine("*** Welcome to Employee Wage Computation ***");
-            Employee emp = new Employee(FULL_TIME,PART_TIME,WAGE_PER_HOUR);
+            Employee emp = new Employee(FULL_TIME,PART_TIME,WAGE_PER_HOUR); // employee instance
 
             employeeMonthlyWage = emp.monthlyWage();
 
