@@ -6,7 +6,10 @@ namespace empWageComputation
     {
         static void Main(string[] args)
         {
+            bool isEmployeePresent;
             Console.WriteLine("*** Welcome to Employee Wage Computation ***");
+            Employee emp = new Employee();
+            isEmployeePresent = emp.employeeAttendance();
         }
     }
 }
