@@ -12,11 +12,13 @@ namespace empWageComputation
         private int PRESENT = 0;
         private int WAGE_PER_HOUR = 20;
         private int NO_WAGE = 0;
+        private int MONTHLY_MAX_WORKING_HOURS = 100;
 
         private int empType;
         private int workHours;
         private int wageForADay;
         private bool isEmployeePresent;
+        private int workingHoursForMonth = 0;
 
         // Method to check if employee is present or not
         public bool employeeAttendance()
@@ -38,7 +40,7 @@ namespace empWageComputation
 
             int employeeMonthlyWage = 0;
             int daysWorkedInMonth = 0;
-            while (daysWorkedInMonth < MONTHLY_WORKING_DAYS)
+            while ( daysWorkedInMonth < MONTHLY_WORKING_DAYS && workingHoursForMonth < MONTHLY_MAX_WORKING_HOURS)
             {
                 isEmployeePresent = this.employeeAttendance();
                 if (isEmployeePresent == true)
@@ -57,7 +59,15 @@ namespace empWageComputation
                             break;
                     }
 
+                    if ( (MONTHLY_MAX_WORKING_HOURS - workingHoursForMonth) < FULL_DAY_HOUR)
+                    {
+                        workHours = PART_TIME_HOUR;
+                    }
+
                     wageForADay = this.dailyEmployeeWage(WAGE_PER_HOUR, workHours);  // Daily wage
+                    daysWorkedInMonth++;
+
+                    workingHoursForMonth += workHours;
                 }
                 else
                 {
@@ -65,7 +75,7 @@ namespace empWageComputation
                 }
 
                 employeeMonthlyWage += wageForADay;  // Caclulating monthly wage
-                daysWorkedInMonth++;
+               
             }
             return employeeMonthlyWage;
         }

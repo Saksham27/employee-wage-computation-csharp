@@ -15,6 +15,7 @@ namespace empWageComputation
 
             employeeMonthlyWage = emp.monthlyWage();
 
+            Console.WriteLine(employeeMonthlyWage);
         }
 
     }
