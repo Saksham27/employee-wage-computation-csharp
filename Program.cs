@@ -17,8 +17,8 @@ namespace empWageComputation
             Console.WriteLine("*** Welcome to Employee Wage Computation ***");
             Employee emp = new Employee();
             isEmployeePresent = emp.employeeAttendance();
-            
-            if ( isEmployeePresent == true )
+
+            if (isEmployeePresent == true)
             {
                 wageForADay = emp.dailyEmployeeWage(WAGE_PER_HOUR, FULL_DAY_HOUR);
             }
@@ -26,9 +26,8 @@ namespace empWageComputation
             {
                 wageForADay = NO_WAGE;
             }
-
-            Console.WriteLine( $"{isEmployeePresent}, {wageForADay}");
         }
+
     }
 }
  
