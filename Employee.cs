@@ -100,7 +100,7 @@ namespace empWageComputation
                 }
 
                 days++; // increasing a day
-
+                dictionary[$"Day {days}"] = wageForADay;
                 employeeMonthlyWage += wageForADay;  // Caclulating monthly wage
                
             }
