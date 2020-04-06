@@ -19,20 +19,25 @@ namespace empWageComputation
         static void Main(string[] args)
         {
             int employeeMonthlyWage;
-            Dictionary<string, int> dailyWage = new Dictionary<string, int>();      // data structure to store daily wage corresponding toe each day
+
+            // data structure to store daily wage corresponding toe each day
+            Dictionary<string, int> dailyWage = new Dictionary<string, int>();      
             
             Console.WriteLine("*** Welcome to Employee Wage Computation ***");
-                        
-            Employee employee = new Employee(FULL_TIME,PART_TIME,WAGE_PER_HOUR);    // employee instance
 
-            employeeMonthlyWage = employee.monthlyWage(dailyWage);  // calculating the total monthly wage for employee instance
-            
-            foreach (var item in dailyWage)     // printing the daily wage
+            // employee instance            
+            Employee employee = new Employee(FULL_TIME,PART_TIME,WAGE_PER_HOUR);
+
+            // calculating the total monthly wage for employee instance
+            employeeMonthlyWage = employee.MonthlyWage(dailyWage);
+
+            // printing the daily wage
+            foreach (var item in dailyWage)     
             {
                 Console.WriteLine($"{item.Key} : {item.Value}");
             }
           
-            Console.WriteLine($"Total Monthly Wage : {employeeMonthlyWage}");   // prinitng the total monthly wage
+            Console.WriteLine($"Total Monthly Wage : {employeeMonthlyWage}");   
         }
 
     }
